@@ -13,15 +13,10 @@
 template <typename T>
 class LinkedListSingleNode : public Node<T>
 {
-protected:
-   LinkedListSingleNode* _next;
-
 public:
-   LinkedListSingleNode(T data) : Node<T>(data) { }
+   LinkedListSingleNode(T _data) : Node<T>(_data) { }
 
-   // getter/setter
-   LinkedListSingleNode* next() const { return _next; }
-   void next(const LinkedListSingleNode* const value) { _next = value; }
+   LinkedListSingleNode* next;
 };
 
 #endif
