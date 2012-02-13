@@ -7,17 +7,17 @@
 #ifndef NODE_H
 #define NODE_H
 
+#include <tr1/memory>
+
 template <typename T>
 class Node
 {
-   T _data;
-
+   
 public:
-   Node(T data) : _data(data) { }
+   
+   Node(T _data) : data(new T(_data)) {  }
 
-   // getter/setter
-   T const& data() const { return _data; }
-   void data(T const& value) { _data = value; }
+   std::tr1::shared_ptr<T> data;
 };
 
 #endif
